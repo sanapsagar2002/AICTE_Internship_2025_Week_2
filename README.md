@@ -91,6 +91,7 @@ plt.show()
 The project includes a **CNN model** with layers like **Conv2D, MaxPooling, Flatten, Dense, and Dropout** for effective feature extraction and classification.
 
 ### Preprocessing
+```python
 img_width, img_height = 150, 150
 batch_size = 32
 
@@ -121,13 +122,17 @@ test_generator = test_datagen.flow_from_directory(
     class_mode='binary',
     shuffle=True
 )
+```
 
 ### Class Mapping
+```python
 class_mapping = train_generator.class_indices
 class_names = list(class_mapping.keys())
 print("Class Names:", class_names)
+```
 
 ### CNN Model Architecture
+```python
 model = Sequential([
     Input(shape=(img_width, img_height, 3)),
 
@@ -145,7 +150,7 @@ model = Sequential([
     Dropout(0.5),
     Dense(1, activation='sigmoid')
 ])
-
+```
 ## Results & Evaluation
 The model is evaluated using accuracy and loss plots, confusion matrix, and test predictions.
 
